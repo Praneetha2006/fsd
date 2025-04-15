@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Savings - Expense Tracker</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #eef2f5;
+    }
+
+    nav {
+      background-color: #007BFF;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-around;
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .summary-box, .goal-box {
+      background-color: white;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .summary-box h2, .goal-box h2 {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .summary-box p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+      text-align: center;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #ffc107;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #e0a800;
+    }
+
+    .goal-result {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="expenses.html">Expenses</a>
+    <a href="savings.html">Savings</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="summary-box">
+      <h2>My Savings</h2>
+      <p><strong>Total Salary:</strong> ₹50,000</p>
+      <p><strong>Total Expenses:</strong> ₹15,000</p>
+      <p><strong>Current Savings:</strong> ₹35,000</p>
+    </div>
+
+    <div class="goal-box">
+      <h2>Set a Savings Goal</h2>
+      <input type="number" id="goalInput" placeholder="Enter goal amount (₹)">
+      <button onclick="checkGoal()">Check Goal</button>
+      <div id="goalResult" class="goal-result"></div>
+    </div>
+
+  </div>
+
+  <script>
+    function checkGoal() {
+      const goal = parseInt(document.getElementById('goalInput').value);
+      const savings = 35000; // Example static savings
+
+      const result = document.getElementById('goalResult');
+      if (isNaN(goal) || goal <= 0) {
+        result.textContent = "Please enter a valid amount.";
+        result.style.color = "red";
+        return;
+      }
+
+      if (goal <= savings) {
+        result.textContent = `🎉 You have enough savings to reach this goal!`;
+        result.style.color = "green";
+      } else {
+        result.textContent = `⚠️ You need ₹${goal - savings} more to reach this goal.`;
+        result.style.color = "orange";
+      }
+    }
+  </script>
+
+</body>
+</html>

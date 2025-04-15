@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expenses - Expense Tracker</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #eef2f5;
+    }
+
+    nav {
+      background-color: #007BFF;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-around;
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .form-box {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .form-box h2 {
+      margin-bottom: 1rem;
+    }
+
+    .form-box input, .form-box button {
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-box button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-box button:hover {
+      background-color: #218838;
+    }
+
+    table {
+      width: 100%;
+      background: white;
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="expenses.html">Expenses</a>
+    <a href="savings.html">Savings</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="form-box">
+      <h2>Add New Expense</h2>
+      <input type="text" id="expenseName" placeholder="Expense Name">
+      <input type="number" id="expenseAmount" placeholder="Amount (₹)">
+      <button onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <table id="expenseTable">
+      <thead>
+        <tr>
+          <th>Expense Name</th>
+          <th>Amount (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Expense rows will go here -->
+      </tbody>
+    </table>
+
+  </div>
+
+  <script>
+    function addExpense() {
+      const name = document.getElementById('expenseName').value;
+      const amount = document.getElementById('expenseAmount').value;
+
+      if (name && amount) {
+        const table = document.getElementById('expenseTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+        newRow.innerHTML = `<td>${name}</td><td>₹${amount}</td>`;
+        
+        document.getElementById('expenseName').value = '';
+        document.getElementById('expenseAmount').value = '';
+      } else {
+        alert("Please enter both name and amount!");
+      }
+    }
+  </script>
+
+</body>
+</html>
