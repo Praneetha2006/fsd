@@ -9,7 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px auto; /* Centers the background element with some margin */
+    margin: 50px auto; 
+    font-family:Open Sans;/* Centers the background element with some margin */
 }
 
 .high {

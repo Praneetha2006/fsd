@@ -17,6 +17,16 @@
 .bg-container-three{
     background-image:linear-gradient(#34e8eb,#eb34cc);
         height:100%;
+        font-family:Open Sans;
+}
+nav a.active {
+    color: #007BFF; /* Bootstrap blue */
+    font-weight: bold;
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border-bottom: 2px solid #007BFF;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 nav {
     background-color: #007BFF;
@@ -40,6 +50,7 @@ nav {
   
   nav a:hover {
     color: #ffd700;
+    text-decoration: none;
   }
   
   /* Dropdown container */
@@ -102,7 +113,7 @@ nav {
     <nav>
         <a href="home.html">Home</a>
         <a href="registration_form.html">Registration Form</a>
-        <a href="savings.html">Savings</a>
+        <a href="savings.html" class="active">Savings</a>
         <a href="bargraph.html">Overview</a>
         <a href="wishlist.html">Wishlist</a>
         <div class="dropdown">

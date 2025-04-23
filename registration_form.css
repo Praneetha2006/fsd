@@ -10,7 +10,15 @@
         padding-top: 5px;
         padding-bottom: 5px;
       }
-      
+      nav a.active {
+        color: #007BFF; /* Bootstrap blue */
+        font-weight: bold;
+        background-color: white;
+        padding: 8px 16px;
+        border-radius: 5px;
+        border-bottom: 2px solid #007BFF;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
       nav a {
         color: white;
         text-decoration: none;
@@ -20,6 +28,7 @@
       
       nav a:hover {
         color: #ffd700;
+        text-decoration: none;
       }
       
       /* Dropdown container */
@@ -93,7 +102,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto; /* Centers the form on the page */
+    margin: 20px auto;
+    font-family:Open Sans; /* Centers the form on the page */
 }
 
 form {

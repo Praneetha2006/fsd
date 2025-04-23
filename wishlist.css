@@ -6,6 +6,15 @@ body {
     padding: 0;
     color: #333;
   }
+  nav a.active {
+    color: #007BFF; /* Bootstrap blue */
+    font-weight: bold;
+    background-color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border-bottom: 2px solid #007BFF;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
   
   nav {
     background-color: #007BFF;
@@ -204,4 +213,8 @@ body {
     .priority {
       text-align: left;
     }
+  }
+  .bg-container-four{
+    font-family:Open Sans;
+    background-color: #eae4ea;
   }
